@@ -4,12 +4,12 @@ import React, { useEffect } from 'react';
 import { useAnimation, motion } from 'motion/react';
 import { useInView } from 'react-intersection-observer';
 import Image from 'next/image';
-import SectionHeading from './sectionHeading';
+import SectionHeading from './sectionHeading' ;
 import Skills from './skills';
-// import Projects from '../components/projects/project';
-import ShadowBlock from '../components/shadowBlock'
-import ProjectsHeading from '../components/projectsHeading';
-import Contact from '../components/contact/index';
+// import Projects from '/components/projects/project'
+// import ShadowBlock from '@/components/ShadowBlock';
+// import ProjectsHeading from '@/components/projectsHeading';
+import Contact from '@/components/contact';
 import Article from './article';
 import StickyNav from './chat/sticky-nav';
 
@@ -39,10 +39,10 @@ const Home = () => {
           <h2 className="text-3xl  font-semibold font-mplus">
             Elisha Yoeli
           </h2>
-          <p> Digital Nomad, Data Scientist Graduate , Software Engineer,  </p>
+          <p> Data Scientist | Software Engineer ( Designer / Developer ) </p>
         </div>
-        <div className=" flex flex-col ml-auto mt-4 md:mt-0 md:ml-6  ">
-          <div className="border-teal-900/40 border-2 rounded-full w-24 h-24  inline-block overflow-hidden">
+        <div className="mt-4 md:mt-0 md:ml-6">
+          <div className="border-teal-900/40 border-2 rounded-full w-24 h-24 inline-block overflow-hidden">
             <Image
               src="/me.jpg"
               alt="Elisha Yoeli"
@@ -54,19 +54,21 @@ const Home = () => {
 
       </div>
       <section className="mt-6">
-        <SectionHeading>Introduction</SectionHeading>
+        <SectionHeading>Work</SectionHeading>
         <p className="mb-6 dark:text-zinc-100 text-zinc-900 transition duration-500 ease-in-out">
-          &nbsp;&nbsp;&nbsp;I approach development like I approach life—with curiosity, purpose, and a desire to make something that matters.
-                            I care about writing clean, efficient code, but I also care about building experiences that feel intuitive and meaningful. 
-                            To me, every project is more than just a product—it's a solution, a connection, a chance to serve real needs with thoughtful design. I’m drawn to simplicity, honesty, and tools that quietly do their job, so the user can focus on what truly matters. 
-                            My goal? Build with intention, grow with integrity, and leave every line of code better than I found it..
+          &nbsp;&nbsp;&nbsp;I am a motivated and detail-oriented software developer with a great foundation in front-end
+        and back-end technologies. As a software engineering student, I have honed my skills through
+        hands-on skills in building responsive web applications using React.js, Express.js, and
+        PostgreSQL. I also have strong understanding of Git/GitHub workflows, modern JavaScript
+        (ES6+), and TypeScript. My ability to think critically, and continuously learn has helped me to be
+        more passionate about creating clean, maintainable, and scalable code. 
         </p>
       </section>
       <section className="mt-6" id="works">
         <SectionHeading>Skills</SectionHeading>
         <Skills />
       </section>
-       {/* <section className="mt-8">
+      {/* <section className="mt-8">
         <ProjectsHeading />
         <Projects />
       </section>
@@ -79,7 +81,7 @@ const Home = () => {
         variants={variants}
         transition={{ duration: 0.7, type: 'ease' }}
       >
-         <div className="relative mb-3">
+        <div className="relative mb-3">
           <SectionHeading overlay className="text-5xl md:text-8xl text-center">Contact</SectionHeading>
           <ShadowBlock />
         </div>
@@ -93,7 +95,7 @@ const Home = () => {
           </p>
           <Contact />
         </div>
-      </motion.section>  */}
+      </motion.section> */}
     </Article>
   );
 };

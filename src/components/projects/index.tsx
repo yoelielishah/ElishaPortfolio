@@ -1,5 +1,7 @@
+'use client'
+
 import React from 'react';
-import Project from './project'
+import Project from './Project';
 import projects from '../../data/projects';
 
 const Projects = () => (

@@ -1,11 +1,13 @@
+'use client'
+
 import React, { useEffect } from 'react';
-import { useAnimation, motion } from 'framer-motion';
+import { useAnimation, motion } from 'motion/react';
 import { useInView } from 'react-intersection-observer';
-import PropTypes from 'prop-types';
 import Link from 'next/link';
 import Image from 'next/image';
+import type { Project } from '../../data/projects';
 
-const bgColors = {
+const bgColors: Record<string, string> = {
   orange: 'bg-orange-600',
   green: 'bg-green-600',
   blue: 'bg-blue-400',
@@ -13,7 +15,7 @@ const bgColors = {
   cyan: 'bg-cyan-900',
 };
 
-const txtColors = {
+const txtColors: Record<string, string> = {
   orange: 'text-orange-600',
   green: 'text-green-600',
   blue: 'text-blue-500',
@@ -21,12 +23,16 @@ const txtColors = {
   cyan: 'text-cyan-900',
 };
 
-const variants = {
+const variants: Record<string, { opacity: number; x: number; y: number }> = {
   hidden: { opacity: 0, x: 0, y: 80 },
   enter: { opacity: 1, x: 0, y: 0 },
 };
 
-const Project = ({ project }) => {
+interface ProjectProps {
+  project: Project;
+}
+
+const Project = ({ project }: ProjectProps) => {
   const controls = useAnimation();
 
   const [ref, inView] = useInView({
@@ -53,7 +59,6 @@ const Project = ({ project }) => {
         src="https://framerusercontent.com/images/0u1KOKQqa7zWlOeQzGyjGsYTIEU.png"
         alt={project.theme}
         fill
-        objectFit="cover"
       />
       <div className="row-span-1 col-span-6 md:col-span-1 z-40 px-6 flex flex-col justify-between my-5 md:my-10 text-zinc-50 font-mplus">
         <h2 className="font-semibold md:text-lg mb-6 md:mb-0">{project.title}</h2>
@@ -94,7 +99,6 @@ const Project = ({ project }) => {
               src={`/images/works/${project.thumbnail}`}
               alt={project.title}
               fill
-              objectFit="cover"
             />
           )
         }
@@ -117,7 +121,7 @@ const Project = ({ project }) => {
                   src={`/images/works/${project.thumbnail}`}
                   alt={project.title}
                   fill
-                  objectFit="cover"
+                  className='object-cover'
                 />
               </div>
               <div className="relative row-span-1 md:row-span-2">
@@ -125,7 +129,7 @@ const Project = ({ project }) => {
                   src={`/images/works/${project.thumbnail2}`}
                   alt={project.title}
                   fill
-                  objectFit="cover"
+                  className='object-cover'
                 />
               </div>
             </div>
@@ -134,19 +138,6 @@ const Project = ({ project }) => {
       </div>
     </motion.div>
   );
-};
-
-Project.propTypes = {
-  project: PropTypes.shape({
-    title: PropTypes.string.isRequired,
-    description: PropTypes.string.isRequired,
-    thumbnail: PropTypes.string.isRequired,
-    thumbnail2: PropTypes.string,
-    theme: PropTypes.string.isRequired,
-    type: PropTypes.string.isRequired,
-    sourceUrl: PropTypes.string,
-    liveUrl: PropTypes.string.isRequired,
-  }).isRequired,
 };
 
 export default Project;

@@ -1,14 +1,12 @@
 'use client';
 
 import type { UIMessage } from 'ai';
-import { useChat } from '@ai-sdk/react';  // AI SDK for React
-// This AI SDK helps manage messages, input , also communication with the AI backend 
-//This also means it is ready to be used as my AI Assistant.
+import { useChat } from '@ai-sdk/react';
 import { useEffect, useState } from 'react';
 import { generateUUID } from '@/lib/utils';
 import { MultimodalInput } from '../chat/multimodal-input';
 import { Messages } from './messages';
-import { toast } from "sonner"
+import { toast } from 'sonner';
 import { useSearchParams } from 'next/navigation';
 
 export function Chat({
@@ -41,13 +39,13 @@ export function Chat({
     generateId: generateUUID,
     experimental_prepareRequestBody: (body) => ({
       id,
-      messages: body.messages,
+      message: body.messages.at(-1),
       selectedChatModel: initialChatModel,
     }),
     // onFinish: () => {
     // },
     onError: (error) => {
-      toast.error(error.message)
+      toast.error('error.message')
     },
   });
 

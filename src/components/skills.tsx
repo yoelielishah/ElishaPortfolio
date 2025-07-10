@@ -49,53 +49,48 @@ interface IconsType {
 }
 
 const icons: IconsType = {
-  React: Code2,
-  "Next.js": Layers,
-  Redux: Database,
-  "Tailwind CSS": Settings,
-  TypeScript: FileText,
+  // ✅ Full Stack & Frontend
   "Node.js": Server,
-  Express: Zap,
-  MongoDB: Database,
-  Mongoose: Database,
-  Ruby: Code2,
-  "Ruby on Rails": Server,
-  Hotwire: Zap,
+  "Next.js": Layers,
+  React: Code2,
+  TypeScript: FileText,
+  JavaScript: FileText,
+  HTML: Code2,
+  CSS: LayoutGrid,
+  "Tailwind CSS": Settings,
+
+  // ✅ Mern Backend
+  PHP: Server,
+  Python: Brain,
+  Flask: Zap,
+
+  // ✅ Data Science
+  "Machine Learning": Brain,
+  "Data Analysis": Search,
+
+  // ✅ Cloud & DevOps
+  AWS: Globe,
+  Vercel: Globe,
+  "GitHub Actions": GitBranch,
+
+  // ✅ Database & ORM
   PostgreSQL: Database,
-  Supabase: Database,
-  Neon: Database,
-  Prisma: Database,
+  MySQL: Database,
+
+  // ✅ AI & ML
+  LLMs: Brain,
   Agents: Bot,
   Workflows: Workflow,
-  LLMs: Brain,
-  "MCP Servers": Server,
-  RAG: Search,
-  "Vercel AI SDK": Brain,
-  "Google Gen AI SDK": Brain,
-  "Mastra AI": Bot,
-  CopilotKit: Bot,
-  "Assistant-UI": MessageSquare,
-  LlamaIndex: Search,
-  Convex: Database,
-  Pinecone: Search,
-  Qdrant: Search,
-  Upstash: Database,
-  Redis: Database,
-  IAM: Shield,
-  S3: HardDrive,
-  EC2: Server,
-  VPC: Network,
-  RDS: Database,
-  Route53: Route,
-  CloudFront: Globe,
-  "CI/CD": GitBranch,
-  "API Gateway": Webhook,
-  Lambda: Cpu,
   Tools: Wrench,
   "Generative UI": LayoutGrid,
-  Figma: Figma
-  
+  "MCP Servers": Server,
+  RAG: Search,
+
+  // ✅ UI/UX
+  Figma: Figma,
 }
+
+
 
 const Skills = () => {
   const [open, setOpen] = useState(false)
